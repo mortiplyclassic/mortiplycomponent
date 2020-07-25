@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/script.js"></script>
+    <title>Mortiply CSS - test</title>
+</head>
+<body>
+    <center><h1 class="tt-uppercase with-shadow">Welcome to Mortiply Components!</h1></center>
+    <div class="holder">
+        <div class="holder-row">
+            <div class="holder-item-12">
+                <h3 class="no-margin uppercase" css-color="green">Grid System</h3>
+                <p class="no-margin">holder/holder-full > holder-row > holder-item-*</p><br>
+            </div>
+        </div>
+    </div>
+    <div class="holder">
+        <div class="holder-row">
+            <div class="holder-item-1" css-border="1px solid #ccc" css-height="30px"><center>item-1</center></div>
+            <div class="holder-item-1" css-border="1px solid #ccc" css-height="30px"><center>item-1</center></div>
+            <div class="holder-item-1" css-border="1px solid #ccc" css-height="30px"><center>item-1</center></div>
+            <div class="holder-item-1" css-border="1px solid #ccc" css-height="30px"><center>item-1</center></div>
+            <div class="holder-item-1" css-border="1px solid #ccc" css-height="30px"><center>item-1</center></div>
+            <div class="holder-item-1" css-border="1px solid #ccc" css-height="30px"><center>item-1</center></div>
+            <div class="holder-item-1" css-border="1px solid #ccc" css-height="30px"><center>item-1</center></div>
+            <div class="holder-item-1" css-border="1px solid #ccc" css-height="30px"><center>item-1</center></div>
+            <div class="holder-item-1" css-border="1px solid #ccc" css-height="30px"><center>item-1</center></div>
+            <div class="holder-item-1" css-border="1px solid #ccc" css-height="30px"><center>item-1</center></div>
+            <div class="holder-item-1" css-border="1px solid #ccc" css-height="30px"><center>item-1</center></div>
+            <div class="holder-item-1" css-border="1px solid #ccc" css-height="30px"><center>item-1</center></div>
+        </div>
+        <div class="holder-row">
+            <div class="holder-item-2" css-border="1px solid #ccc" css-height="30px"><center>item-2</center></div>
+            <div class="holder-item-2" css-border="1px solid #ccc" css-height="30px"><center>item-2</center></div>
+            <div class="holder-item-2" css-border="1px solid #ccc" css-height="30px"><center>item-2</center></div>
+            <div class="holder-item-2" css-border="1px solid #ccc" css-height="30px"><center>item-2</center></div>
+            <div class="holder-item-2" css-border="1px solid #ccc" css-height="30px"><center>item-2</center></div>
+            <div class="holder-item-2" css-border="1px solid #ccc" css-height="30px"><center>item-2</center></div>
+        </div>
+        <div class="holder-row">
+            <div class="holder-item-3" css-border="1px solid #ccc" css-height="30px"><center>item-3</center></div>
+            <div class="holder-item-3" css-border="1px solid #ccc" css-height="30px"><center>item-3</center></div>
+            <div class="holder-item-3" css-border="1px solid #ccc" css-height="30px"><center>item-3</center></div>
+            <div class="holder-item-3" css-border="1px solid #ccc" css-height="30px"><center>item-3</center></div>
+        </div>
+        <div class="holder-row">
+            <div class="holder-item-4" css-border="1px solid #ccc" css-height="30px"><center>item-4</center></div>
+            <div class="holder-item-4" css-border="1px solid #ccc" css-height="30px"><center>item-4</center></div>
+            <div class="holder-item-4" css-border="1px solid #ccc" css-height="30px"><center>item-4</center></div>
+        </div>
+        <div class="holder-row">
+            <div class="holder-item-6" css-border="1px solid #ccc" css-height="30px"><center>item-6</center></div>
+            <div class="holder-item-6" css-border="1px solid #ccc" css-height="30px"><center>item-6</center></div>
+        </div>
+        <div class="holder-row">
+            <div class="holder-item-12" css-border="1px solid #ccc" css-height="30px"><center>item-12</center></div>
+        </div>
+    </div>
+    <!-- Table System -->
+    <div class="holder" css-margin-top="3em">
+        <div class="holder-row">
+            <div class="holder-item-12">
+                <h3 class="no-margin uppercase" css-color="green">Table System</h3>
+                <p class="no-margin">table-holder > table > table-header,table-body</p><br>
+            </div>
+        </div>
+    </div>
+    <div class="holder">
+        <div class="holder-row">
+            <div class="holder-item-12">
+                <button id="add" onclick="alert('The button ADD have been clicked!');">Add</button>
+                <button id="edit" onclick="alert('The button EDIT have been clicked!');">Edit</button>
+                <button id="delete" onclick="alert('The button DELETE have been clicked!');">Delete</button>
+                <button id="print" onclick="alert('The button PRINT have been clicked!');">Print</button>
+                <div class="table-holder" css-height="100px">
+                    <table class="table" css-width="1050px" popup-target="personal_information">
+                        <thead class="table-header">
+                            <tr class="fixed-top">
+                                <th css-width="50px" css-text-align="center"><input type="checkbox" set-role="tbl-checkbox-header"></th>
+                                <th css-width="300px">Name</th>
+                                <th css-width="250px">Email Address</th>
+                                <th css-width="200px">Phone Number</th>
+                                <th css-width="300px">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-body">
+                            <tr set-target="#edit" set-target-event="click">
+                                <td css-text-align="center"><input type="checkbox" set-role="tbl-checkbox-body"></td>
+                                <td binding-target="name">Elmer L. Molina</td>
+                                <td binding-target="email_address">elmer.molina@gmail.com</td>
+                                <td binding-target="phone_number">09101234567</td>
+                                <td binding-target="description">The Father</td>
+                            </tr>
+                            <tr set-target="#edit" set-target-event="click">
+                                <td css-text-align="center"><input type="checkbox" set-role="tbl-checkbox-body"></td>
+                                <td binding-target="name">Marina B. Datuin</td>
+                                <td binding-target="email_address">marina.datuin@gmail.com</td>
+                                <td binding-target="phone_number">09111234567</td>
+                                <td binding-target="description">The Mother</td>
+                            </tr>
+                            <tr set-target="#edit" set-target-event="click">
+                                <td css-text-align="center"><input type="checkbox" set-role="tbl-checkbox-body"></td>
+                                <td binding-target="name">Elma Rose D. Molina</td>
+                                <td binding-target="email_address">elma.rose@gmail.com</td>
+                                <td binding-target="phone_number">09121234567</td>
+                                <td binding-target="description">The First Daughter</td>
+                            </tr>
+                            <tr set-target="#edit" set-target-event="click">
+                                <td css-text-align="center"><input type="checkbox" set-role="tbl-checkbox-body"></td>
+                                <td binding-target="name">Mariel Ann D. Molina</td>
+                                <td binding-target="email_address">mariel.ann@gmail.com</td>
+                                <td binding-target="phone_number">09131234567</td>
+                                <td binding-target="description">The Second Daughter</td>
+                            </tr>
+                            <tr set-target="#edit" set-target-event="click">
+                                <td css-text-align="center"><input type="checkbox" set-role="tbl-checkbox-body"></td>
+                                <td binding-target="name">Juan Carlos D. Molina</td>
+                                <td binding-target="email_address">juan.carlos@gmail.com</td>
+                                <td binding-target="phone_number">09141234567</td>
+                                <td binding-target="description">The only son</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup System -->
+    <div class="holder" css-margin-top="3em">
+        <div class="holder-row">
+            <div class="holder-item-12">
+                <h3 class="no-margin uppercase" css-color="green">Dialog System</h3>
+                <p class="no-margin">
+                    popup-form > popup-container > popup-header, popup-body, popup-footer
+                </p><br>
+            </div>
+        </div>
+    </div>
+    <div class="holder">
+        <div class="holder-row">
+            <div class="holder-item-12">
+                <button popup-open="personal_information">Open Dialog</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="personal_information" class="popup-form">
+        <div class="popup-container" css-width="500px">
+            <div class="popup-header">
+                <div class="popup-header-description">
+                    <h2>To God be the glory!</h2>
+                    <p>Use this time to praise God.</p>
+                </div>
+                <button class="close-button" popup-close>&Cross;</button>
+            </div>
+            <div class="popup-body">
+                <blockquote>
+                    <p>For God so loved the world that He gave His only begotten Son that whoever believes in Him shall not perish but have an eternal life. <br><br>John 3:16</p>
+                </blockquote>
+            </div>
+            <div class="popup-footer">
+                <div class="holder-fluid">
+                    <div class="holder-row">
+                        <div class="holder-item-6" css-text-align="left">
+                            <button>Praise</button>
+                            <button>Pray</button>
+                        </div>
+                        <div class="holder-item-6" css-text-align="right">
+                            <button popup-close>Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer css-height="300px"></footer>
+    <script src="js/jquery.js"></script>
+</body>
+</html>
