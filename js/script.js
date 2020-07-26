@@ -23,6 +23,27 @@ $(document).ready(function(){
      $('[css-text-align]').each(function(){
         $(this).css('text-align', $(this).attr('css-text-align')); 
      });
+     $('[css-resize]').each(function(){
+      $(this).css('resize', $(this).attr('css-resize')); 
+   });
+
+     resize_group();
+
+     $(window).resize(function(){
+         resize_group();
+     });
+
+     function resize_group(){
+         $('.input-group-inline').each(function(){
+            $total = $(this);
+            $label = $(this).find('label');
+            $input = $(this).find('input[type=text], input[type=email], input[type=password], input[type=number], select');
+            $total_width = $total.css('width').split('px')[0];
+            $label_width = $label.css('width').split('px')[0];
+            $input.css('width', (new Number($total_width) - new Number($label_width))+"px")
+         });
+     }
+
 
      $(document).on('change', 'input[set-role=tbl-checkbox-header]', function(){
         $('input[set-role=tbl-checkbox-body]').prop('checked', $(this).prop('checked'));
@@ -55,4 +76,18 @@ $(document).ready(function(){
         $parent.fadeIn(150);
         $parent.find('popup-container').addClass('popup-entry');
      });
+
+     $(document).on('keyup', 'textarea', function(){
+      textareaAdjust(this);
+     });
+
+      function textareaAdjust(tArea){
+         if(tArea.value == ""){
+            tArea.style.height = "1px";
+            tArea.style.height = (tArea.scrollHeight)+"px";
+         }else{
+            tArea.style.height = "1px";
+            tArea.style.height = (5+tArea.scrollHeight)+"px";
+         }
+      }
 });

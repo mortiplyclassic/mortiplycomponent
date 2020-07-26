@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery.js"></script>
     <script src="js/script.js"></script>
-    <title>Mortiply CSS - test</title>
+    <title>Mortiply Components - test</title>
 </head>
 <body>
     <center><h1 class="tt-uppercase with-shadow">Welcome to Mortiply Components!</h1></center>
@@ -60,6 +60,120 @@
             <div class="holder-item-12" css-border="1px solid #ccc" css-height="30px"><center>item-12</center></div>
         </div>
     </div>
+
+    <!-- Buttons -->
+    <div class="holder" css-margin-top="3em">
+        <div class="holder-row">
+            <div class="holder-item-12">
+                <h3 class="no-margin uppercase" css-color="green">Buttons</h3>
+                <p class="no-margin">button .add,.edit,.delete,.print</p><br>
+            </div>
+        </div>
+    </div>
+    <div class="holder">
+        <div class="holder-row">
+            <div class="holder-item-12">
+                <button id="default" onclick="alert('The button DEFAULT have been clicked!');">Default</button>
+                <button id="add" class="button-add" onclick="alert('The button ADD have been clicked!');">Add</button>
+                <button id="edit" class="button-edit" onclick="alert('The button EDIT have been clicked!');">Edit</button>
+                <button id="delete" class="button-delete" onclick="alert('The button DELETE have been clicked!');">Delete</button>
+                <button id="print" class="button-print" onclick="alert('The button PRINT have been clicked!');">Print</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inputs -->
+    <div class="holder" css-margin-top="3em" id="input_group">
+        <div class="holder-row">
+            <div class="holder-item-12">
+                <h3 class="no-margin uppercase" css-color="green">Inputs</h3>
+                <p class="no-margin">
+                    Default input style
+                </p><br>
+            </div>
+        </div>
+    </div>
+    <div class="holder">
+        <div class="holder-row">
+            <div class="holder-item-6">
+                <input type="text" placeholder="input=text">
+                <input type="password" placeholder="input=password">
+                <input type="email" placeholder="input=email">
+                <input type="number" placeholder="input=number">
+                <select>
+                    <option value="#">First Value</option>
+                    <option value="#">Second Value</option>
+                    <option value="#">Third Value</option>
+                </select>
+            </div>
+            <div class="holder-item-6">
+                <textarea placeholder="textarea"></textarea>
+                <input type="checkbox"> Check box
+                <input type="checkbox"> Another box<br>
+                <input type="radio" name="radio"> Radio button
+                <input type="radio" name="radio"> Another radio<br>
+            </div>
+        </div>
+    </div>
+
+    <!-- Input Groups -->
+    <div class="holder" css-margin-top="3em" id="input_group">
+        <div class="holder-row">
+            <div class="holder-item-12">
+                <h3 class="no-margin uppercase" css-color="green">Input Groups</h3>
+                <p class="no-margin">
+                    input-group > label, [input, select, textarea]
+                </p><br>
+            </div>
+        </div>
+    </div>
+    <div class="holder">
+        <div class="holder-row">
+            <div class="holder-item-6">
+                <div class="input-group-inline left">
+                    <label>@</label>
+                    <input type="email" name="name" placeholder="This is a input-group-inline left">
+                </div>
+                <div class="input-group-inline left">
+                    <label>@</label>
+                    <select>
+                        <option value="#">First Value</option>
+                        <option value="#">Second Value</option>
+                        <option value="#">Third Value</option>
+                    </select>
+                </div>
+            </div>
+            <div class="holder-item-6">
+                <div class="input-group-inline right">
+                    <input type="email" name="name" placeholder="This is a input-group-inline right">
+                    <label>@gmail.com</label>
+                </div>
+                <div class="input-group-inline right">
+                    <select>
+                        <option value="#">First Value</option>
+                        <option value="#">Second Value</option>
+                        <option value="#">Third Value</option>
+                    </select>
+                    <label>@gmail.com</label>
+                </div>
+            </div>
+        </div>
+        <div class="holder-row">
+            <div class="holder-item-6">
+                <div class="input-group-stack top">
+                    <label>It can be used for long labels like this</label>
+                    <textarea name="name" placeholder="This is a input-group-stack top" css-resize="vertical"></textarea>
+                </div>
+            </div>
+            <div class="holder-item-6">
+                <div class="input-group-stack bottom">
+                    <textarea name="name" placeholder="This is a input-group-stack bottom" css-resize="vertical"></textarea>
+                    <label>It can be used for long labels like this</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Table System -->
     <div class="holder" css-margin-top="3em">
         <div class="holder-row">
@@ -72,10 +186,6 @@
     <div class="holder">
         <div class="holder-row">
             <div class="holder-item-12">
-                <button id="add" onclick="alert('The button ADD have been clicked!');">Add</button>
-                <button id="edit" onclick="alert('The button EDIT have been clicked!');">Edit</button>
-                <button id="delete" onclick="alert('The button DELETE have been clicked!');">Delete</button>
-                <button id="print" onclick="alert('The button PRINT have been clicked!');">Print</button>
                 <div class="table-holder" css-height="100px">
                     <table class="table" css-width="1050px" popup-target="personal_information">
                         <thead class="table-header">
