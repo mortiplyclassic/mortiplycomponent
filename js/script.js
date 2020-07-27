@@ -50,6 +50,7 @@ $(document).ready(function(){
      });
 
      $(document).on('dblclick', '.table-body > tr', function(){
+        $('input[set-role=tbl-checkbox-body]').prop('checked', false);
         $(this).find('input[set-role=tbl-checkbox-body]').trigger('click');
         var target = undefined;
         var event = undefined;
@@ -65,21 +66,35 @@ $(document).ready(function(){
         }
      });
 
-     $(document).on('click', '.popup-form button[popup-close]', function(){
-        $parent = $(this).parents('.popup-form');
-        $parent.find('input, select, textarea').val("");
-        $parent.fadeOut(130);
-     });
+   $(document).on('click', '.popup-form button[popup-close]', function(){
+      $parent = $(this).parents('.popup-form');
+      $parent.find('input, select, textarea').val("");
+      $parent.fadeOut(130);
+   });
 
-     $(document).on('click', 'button[popup-open]', function(){
-        $parent = $('#'+$(this).attr('popup-open'));
-        $parent.fadeIn(150);
-        $parent.find('popup-container').addClass('popup-entry');
-     });
+   $(document).on('click', 'button[popup-open]', function(){
+      $parent = $('#'+$(this).attr('popup-open'));
+      $parent.fadeIn(150);
+      $parent.find('popup-container').addClass('popup-entry');
+   });
 
-     $(document).on('keyup', 'textarea', function(){
+   $(document).on('keyup', 'textarea', function(){
       textareaAdjust(this);
-     });
+   });
+
+   $(document).on('click', '.image-upload.multiple button', function(){
+      $(this).siblings('input').trigger('click');
+   });
+   var old_input;
+   $(document).on('change', '.image-upload.multiple input', function() {
+      if($(this).val() != ""){
+         old_input = $(this);
+      }else{
+         $(this) = old_input;
+      }
+      var parent = $(this).parent('.image-upload.multiple');
+      imagesPreview(this, parent.find('div.img-preview'));
+   });
 
       function textareaAdjust(tArea){
          if(tArea.value == ""){
@@ -90,4 +105,162 @@ $(document).ready(function(){
             tArea.style.height = (5+tArea.scrollHeight)+"px";
          }
       }
+
+      $('.richtext-area').richText({
+         // text formatting
+         bold: true,
+         italic: true,
+         underline: true,
+       
+         // text alignment
+         leftAlign: true,
+         centerAlign: true,
+         rightAlign: true,
+         justify: true,
+       
+         // lists
+         ol: true,
+         ul: true,
+       
+         // title
+         heading: true,
+       
+         // fonts
+         fonts: true,
+         fontList: ["Arial",
+           "Arial Black",
+           "Comic Sans MS",
+           "Courier New",
+           "Geneva",
+           "Georgia",
+           "Helvetica",
+           "Impact",
+           "Lucida Console",
+           "Tahoma",
+           "Times New Roman",
+           "Verdana"
+         ],
+         fontColor: false,
+         fontSize: true,
+       
+         // uploads
+         imageUpload: false,
+         fileUpload: false,
+
+         // link
+         urls: true,
+       
+         // tables
+         table: false,
+       
+         // code
+         removeStyles: false,
+         code: false,
+       
+         // colors
+         colors: [],
+       
+         // dropdowns
+         fileHTML: '',
+         imageHTML: '',
+       
+         // translations
+         translations: {
+           'title': 'Title',
+           'white': 'White',
+           'black': 'Black',
+           'brown': 'Brown',
+           'beige': 'Beige',
+           'darkBlue': 'Dark Blue',
+           'blue': 'Blue',
+           'lightBlue': 'Light Blue',
+           'darkRed': 'Dark Red',
+           'red': 'Red',
+           'darkGreen': 'Dark Green',
+           'green': 'Green',
+           'purple': 'Purple',
+           'darkTurquois': 'Dark Turquois',
+           'turquois': 'Turquois',
+           'darkOrange': 'Dark Orange',
+           'orange': 'Orange',
+           'yellow': 'Yellow',
+           'imageURL': 'Image URL',
+           'fileURL': 'File URL',
+           'linkText': 'Link text',
+           'url': 'URL',
+           'size': 'Size',
+           'responsive': '<a href="https://www.jqueryscript.net/tags.php?/Responsive/">Responsive</a>',
+           'text': 'Text',
+           'openIn': 'Open in',
+           'sameTab': 'Same tab',
+           'newTab': 'New tab',
+           'align': 'Align',
+           'left': 'Left',
+           'justify': 'Justify',
+           'center': 'Center',
+           'right': 'Right',
+           'rows': 'Rows',
+           'columns': 'Columns',
+           'add': 'Add',
+           'pleaseEnterURL': 'Please enter an URL',
+           'videoURLnotSupported': 'Video URL not supported',
+           'pleaseSelectImage': 'Please select an image',
+           'pleaseSelectFile': 'Please select a file',
+           'bold': 'Bold',
+           'italic': 'Italic',
+           'underline': 'Underline',
+           'alignLeft': 'Align left',
+           'alignCenter': 'Align centered',
+           'alignRight': 'Align right',
+           'addOrderedList': 'Add ordered list',
+           'addUnorderedList': 'Add unordered list',
+           'addHeading': 'Add Heading/title',
+           'addFont': 'Add font',
+           'addFontColor': 'Add font color',
+           'addFontSize': 'Add font size',
+           'addImage': 'Add image',
+           'addVideo': 'Add video',
+           'addFile': 'Add file',
+           'addURL': 'Add URL',
+           'addTable': 'Add table',
+           'removeStyles': 'Remove styles',
+           'code': 'Show HTML code',
+           'undo': 'Undo',
+           'redo': 'Redo',
+           'close': 'Close'
+         },
+       
+         // privacy
+         youtubeCookies: false,
+       
+         // dev settings
+         useSingleQuotes: false,
+         height: 0,
+         heightPercentage: 0,
+         id: "",
+         class: "",
+         useParagraph: false,
+         maxlength: 0,
+       
+         // callback function after init
+         callback: undefined
+       });
+         
+
+       var imagesPreview = function(input, preview_destination) {
+         preview_destination.html("");
+         if (input.files) {
+             var filesAmount = input.files.length;
+ 
+             for (i = 0; i < filesAmount; i++) {
+                 var reader = new FileReader();
+ 
+                 reader.onload = function(event) {
+                     $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(preview_destination);
+                 }
+ 
+                 reader.readAsDataURL(input.files[i]);
+             }
+         }
+     };
 });

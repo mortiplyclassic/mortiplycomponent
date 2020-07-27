@@ -26,6 +26,7 @@
 
 textarea {
     resize: none;
+    border: 0.5px solid #777;
     padding: 5px 10px;
     margin-bottom: 5px;
     min-height: 30px;
@@ -683,4 +684,29 @@ body {
 .input-group-stack.bottom select,
 .input-group-stack.bottom textarea:focus {
     outline: 0;
+}
+
+.image-upload input {
+    display: none;
+}
+
+.image-upload.multiple button {
+    width: 100%;
+}
+
+.image-upload.multiple .img-preview {
+    padding: 10px;
+    border: 0.5px solid #777;
+    border-style: ridge;
+    background-color: #fff;
+    min-height: 156px;
+}
+
+.img-preview img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid #eee;
+    background-color: #fff;
+    margin: 1px;
 }

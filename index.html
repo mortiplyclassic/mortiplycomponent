@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/font_awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/richtext.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery.js"></script>
+    <script src="js/jquery.richtext.min.js"></script>
     <script src="js/script.js"></script>
     <title>Mortiply Components - test</title>
 </head>
@@ -198,35 +201,35 @@
                             </tr>
                         </thead>
                         <tbody class="table-body">
-                            <tr set-target="#edit" set-target-event="click">
+                            <tr set-target="#edit" set-target-event="click" row-id="1">
                                 <td css-text-align="center"><input type="checkbox" set-role="tbl-checkbox-body"></td>
                                 <td binding-target="name">Elmer L. Molina</td>
                                 <td binding-target="email_address">elmer.molina@gmail.com</td>
                                 <td binding-target="phone_number">09101234567</td>
                                 <td binding-target="description">The Father</td>
                             </tr>
-                            <tr set-target="#edit" set-target-event="click">
+                            <tr set-target="#edit" set-target-event="click" row-id="2">
                                 <td css-text-align="center"><input type="checkbox" set-role="tbl-checkbox-body"></td>
                                 <td binding-target="name">Marina B. Datuin</td>
                                 <td binding-target="email_address">marina.datuin@gmail.com</td>
                                 <td binding-target="phone_number">09111234567</td>
                                 <td binding-target="description">The Mother</td>
                             </tr>
-                            <tr set-target="#edit" set-target-event="click">
+                            <tr set-target="#edit" set-target-event="click" row-id="3">
                                 <td css-text-align="center"><input type="checkbox" set-role="tbl-checkbox-body"></td>
                                 <td binding-target="name">Elma Rose D. Molina</td>
                                 <td binding-target="email_address">elma.rose@gmail.com</td>
                                 <td binding-target="phone_number">09121234567</td>
                                 <td binding-target="description">The First Daughter</td>
                             </tr>
-                            <tr set-target="#edit" set-target-event="click">
+                            <tr set-target="#edit" set-target-event="click" row-id="4">
                                 <td css-text-align="center"><input type="checkbox" set-role="tbl-checkbox-body"></td>
                                 <td binding-target="name">Mariel Ann D. Molina</td>
                                 <td binding-target="email_address">mariel.ann@gmail.com</td>
                                 <td binding-target="phone_number">09131234567</td>
                                 <td binding-target="description">The Second Daughter</td>
                             </tr>
-                            <tr set-target="#edit" set-target-event="click">
+                            <tr set-target="#edit" set-target-event="click" row-id="5">
                                 <td css-text-align="center"><input type="checkbox" set-role="tbl-checkbox-body"></td>
                                 <td binding-target="name">Juan Carlos D. Molina</td>
                                 <td binding-target="email_address">juan.carlos@gmail.com</td>
@@ -274,7 +277,7 @@
                 </blockquote>
             </div>
             <div class="popup-footer">
-                <div class="holder-fluid">
+                <div class="holder">
                     <div class="holder-row">
                         <div class="holder-item-6" css-text-align="left">
                             <button>Praise</button>
@@ -288,7 +291,45 @@
             </div>
         </div>
     </div>
+
+    <div class="holder" css-margin-top="3em">
+        <div class="holder-row">
+            <div class="holder-item-12">
+                <h3 class="no-margin uppercase" css-color="green">Richtext area</h3>
+                <p class="no-margin">For creating content, you must need this!</p><br>
+            </div>
+        </div>
+    </div>
+    <div class="holder">
+        <div class="holder-row">
+            <div class="holder-item-12">
+                <textarea class="richtext-area" name="example"></textarea>
+            </div>
+        </div>
+    </div>
+    
+    <div class="holder" css-margin-top="3em">
+        <div class="holder-row">
+            <div class="holder-item-12">
+                <h3 class="no-margin uppercase" css-color="green">Multiple image upload</h3>
+                <p class="no-margin">Multiple image upload with preview</p><br>
+            </div>
+        </div>
+    </div>
+    <div class="holder">
+        <div class="holder-row">
+            <div class="holder-item-12">
+                <div class="image-upload multiple">
+                    <input type="file" multiple accept="image/*">
+                    <button><span class="fa fa-photo"></span> Upload photo</button>
+                    <div class="img-preview"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer css-height="300px"></footer>
     <script src="js/jquery.js"></script>
+    <script src="js/jquery.richtext.min.js"></script>
 </body>
 </html>
