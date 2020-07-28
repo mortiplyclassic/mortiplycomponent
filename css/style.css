@@ -690,6 +690,19 @@ body {
     display: none;
 }
 
+.image-upload.single img {
+    width: 100%;
+    border: 1px solid #ccc;
+    object-fit: cover;
+    background-color: #fff;
+}
+
+.image-upload.single img:hover {
+    transition: background-color 0.3s ease-in-out;
+    background-color: #eee;
+    cursor: pointer;
+}
+
 .image-upload.multiple button {
     width: 100%;
 }

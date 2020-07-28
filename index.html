@@ -6,8 +6,10 @@
     <link rel="stylesheet" href="css/font_awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/richtext.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/select2.min.css">
     <script src="js/jquery.js"></script>
     <script src="js/jquery.richtext.min.js"></script>
+    <script src="js/select2.min.js"></script>
     <script src="js/script.js"></script>
     <title>Mortiply Components - test</title>
 </head>
@@ -115,6 +117,30 @@
                 <input type="checkbox"> Another box<br>
                 <input type="radio" name="radio"> Radio button
                 <input type="radio" name="radio"> Another radio<br>
+            </div>
+        </div>
+    </div>
+
+    <!-- Select -->
+    <div class="holder" css-margin-top="3em">
+        <div class="holder-row">
+            <div class="holder-item-12">
+                <h3 class="no-margin uppercase" css-color="green">Select2 component</h3>
+                <p class="no-margin">
+                    For select with search function
+                </p><br>
+            </div>
+        </div>
+    </div>
+    <div class="holder">
+        <div class="holder-row">
+            <div class="holder-item-6">
+                <select class="select2" css-width="100%">
+                    <option value="#">Select2 is awesome!</option>
+                    <option value="#">First Value</option>
+                    <option value="#">Second Value</option>
+                    <option value="#">Third Value</option>
+                </select>
             </div>
         </div>
     </div>
@@ -318,7 +344,7 @@
     </div>
     <div class="holder">
         <div class="holder-row">
-            <div class="holder-item-12">
+            <div class="holder-item-10">
                 <div class="image-upload multiple">
                     <input type="file" multiple accept="image/*">
                     <button><span class="fa fa-photo"></span> Upload photo</button>
@@ -328,8 +354,30 @@
         </div>
     </div>
 
+    <div class="holder" css-margin-top="3em">
+        <div class="holder-row">
+            <div class="holder-item-12">
+                <h3 class="no-margin uppercase" css-color="green">Single image upload</h3>
+                <p class="no-margin">Single image upload with preview</p><br>
+            </div>
+        </div>
+    </div>
+    <div class="holder">
+        <div class="holder-row">
+            <div class="holder-item-2">
+                <div class="image-upload single">
+                    <input type="file" multiple accept="image/*">
+                    <img src="images/Add_photo.png" alt="Photo">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <footer css-height="300px"></footer>
     <script src="js/jquery.js"></script>
     <script src="js/jquery.richtext.min.js"></script>
+    <script src="js/select2.min.js"></script>
 </body>
 </html>

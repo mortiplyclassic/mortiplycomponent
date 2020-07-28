@@ -25,7 +25,16 @@ $(document).ready(function(){
      });
      $('[css-resize]').each(function(){
       $(this).css('resize', $(this).attr('css-resize')); 
-   });
+    });
+     $('[css-position]').each(function(){
+        $(this).css('position', $(this).attr('css-position')); 
+     });
+      $('[css-display]').each(function(){
+        $(this).css('display', $(this).attr('css-display')); 
+     });
+      $('.image-upload.single img').each(function(){
+        $(this).css('height', $(this).width());
+      });
 
      resize_group();
 
@@ -80,6 +89,21 @@ $(document).ready(function(){
 
    $(document).on('keyup', 'textarea', function(){
       textareaAdjust(this);
+   });
+
+   $(document).on('click', '.image-upload.single img', function(){
+      $(this).siblings('input').trigger('click');
+   });
+
+   var old_input_single;
+   $(document).on('change', '.image-upload.single input', function() {
+      if($(this).val() != ""){
+         old_input_single = $(this);
+      }else{
+         $(this) = old_input_single;
+      }
+      var parent = $(this).parent('.image-upload.single');
+      singlePreview(this, parent.find('img'));
    });
 
    $(document).on('click', '.image-upload.multiple button', function(){
@@ -246,6 +270,10 @@ $(document).ready(function(){
          callback: undefined
        });
          
+       $(".select2").select2( {
+         theme: "classic",
+         width: "resolve"
+       });
 
        var imagesPreview = function(input, preview_destination) {
          preview_destination.html("");
@@ -261,6 +289,17 @@ $(document).ready(function(){
  
                  reader.readAsDataURL(input.files[i]);
              }
+         }
+     };
+
+     var singlePreview = function(input, preview_destination) {
+         preview_destination.attr('src', "");
+         if (input.files) {
+            var reader = new FileReader();
+            reader.onload = function(event) {
+               preview_destination.attr('src', event.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
          }
      };
 });
