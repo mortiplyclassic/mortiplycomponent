@@ -109,6 +109,26 @@ button.button-print:hover {
     background-color: #1c3270;
 }
 
+.link-black {
+    color: #444;
+    text-decoration: none;
+}
+
+.link-black:hover,
+.link-black:focus {
+    text-decoration: underline;
+}
+
+.link-white {
+    color: #eee;
+    text-decoration: none;
+}
+
+.link-white:hover,
+.link-white:focus {
+    text-decoration: underline;
+}
+
 code,
 kbd,
 pre,
@@ -267,8 +287,8 @@ body {
 
 .holder-full {
     width: 100%;
-    padding-right: 5px;
-    padding-left: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
 }
