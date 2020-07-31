@@ -193,6 +193,10 @@
                     <label>It can be used for long labels like this</label>
                     <textarea name="name" placeholder="This is a input-group-stack top" css-resize="vertical"></textarea>
                 </div>
+                <div class="input-group-joined">
+                    <label for="name">Name : </label>
+                    <input type="text" name="name" id="name" >
+                </div>
             </div>
             <div class="holder-item-6">
                 <div class="input-group-stack bottom">
@@ -216,7 +220,7 @@
         <div class="holder-row">
             <div class="holder-item-12">
                 <div class="table-holder" css-height="100px">
-                    <table class="table" css-width="1050px" popup-target="personal_information">
+                    <table class="table" css-width="100%">
                         <thead class="table-header">
                             <tr class="fixed-top">
                                 <th css-width="50px" css-text-align="center"><input type="checkbox" set-role="tbl-checkbox-header"></th>
@@ -226,7 +230,7 @@
                                 <th css-width="300px">Description</th>
                             </tr>
                         </thead>
-                        <tbody class="table-body">
+                        <tbody class="table-body" responsive="200px">
                             <tr set-target="#edit" set-target-event="click" row-id="1">
                                 <td css-text-align="center"><input type="checkbox" set-role="tbl-checkbox-body"></td>
                                 <td binding-target="name">Elmer L. Molina</td>
@@ -289,7 +293,7 @@
     </div>
 
     <div id="personal_information" class="popup-form">
-        <div class="popup-container" css-width="500px">
+        <div class="popup-container" css-width-responsive="500px">
             <div class="popup-header">
                 <div class="popup-header-description">
                     <h2>To God be the glory!</h2>
@@ -305,11 +309,8 @@
             <div class="popup-footer">
                 <div class="holder">
                     <div class="holder-row">
-                        <div class="holder-item-6" css-text-align="left">
-                            <button>Praise</button>
-                            <button>Pray</button>
-                        </div>
                         <div class="holder-item-6" css-text-align="right">
+                            <button>Pray</button>
                             <button popup-close>Close</button>
                         </div>
                     </div>

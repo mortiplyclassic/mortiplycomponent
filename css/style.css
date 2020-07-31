@@ -255,8 +255,8 @@ body {
 
 .holder {
     width: 100%;
-    padding-right: 5px;
-    padding-left: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -468,7 +468,7 @@ body {
 .popup-form {
     display: none;
     position: fixed;
-    z-index: 2;
+    z-index: 2000;
     top: 0px;
     left: 0px;
     width: 100%;
@@ -486,8 +486,14 @@ body {
     top: 20px;
     text-align: left;
     border: 1px solid #999;
-
+    width: 100%;
     animation: popup_entry 0.25s linear normal;
+}
+
+@media (max-width: 589px){
+    .popup-container {
+        margin: 0px 20px;
+    }
 }
 
 .popup-header {
@@ -522,7 +528,7 @@ body {
 .popup-footer {
     width: 100%;
     background-color: #fff;
-    padding: 5px 10px;
+    padding: 5px 10px 20px 10px;
     border-top: 1px solid #ccc;
 }
 
@@ -706,12 +712,54 @@ body {
     outline: 0;
 }
 
+.input-group-joined {
+    width: 100%;
+    position: relative;
+}
+
+.input-group-joined label {
+    position: absolute;
+    background-color: #fff;
+    padding: 0px 5px;
+    top: 21px;
+    left: 10px;
+    font-weight: bold;
+    transition: 0.15s;
+}
+
+.input-group-joined input[type=text],
+.input-group-joined input[type=email],
+.input-group-joined input[type=password],
+.input-group-joined input[type=number], 
+.input-group-joined select {
+    border-radius: 5px;
+    border: 0.5px solid #777;
+    min-height: 30px;
+    padding: 5px 10px;
+    padding-top: 10px;
+    width: 100%;
+    z-index: 5;
+    margin-top: 15px;
+}
+
+.input-group-joined textarea {
+    border-radius: 5px;
+    border: 0.5px solid #777;
+    min-height: 33px;
+    padding: 5px 10px;
+    padding-top: 10px;
+    width: 100%;
+    z-index: 5;
+    margin-top: 15px;
+}
+
 .image-upload input {
     display: none;
 }
 
 .image-upload.single img {
     width: 100%;
+    height: auto;
     border: 1px solid #ccc;
     object-fit: cover;
     background-color: #fff;

@@ -32,14 +32,24 @@ $(document).ready(function(){
       $('[css-display]').each(function(){
         $(this).css('display', $(this).attr('css-display')); 
      });
+     $('[css-width-responsive]').each(function(){
+        $(this).css('width', $(this).attr('css-width-responsive'));
+        if($(this).outerWidth() > window.screen.width){
+            $(this).css('width', (window.screen.width - 60)+"px");
+        }
+      });
+      $('.table-body[responsive]').each(function(){
+         $(this).find('td[binding-target]').css('min-width', $(this).attr('responsive')); 
+      });
       $('.image-upload.single img').each(function(){
-        $(this).css('height', $(this).width());
+         $(this).css('height', $(this).width());
       });
 
      resize_group();
 
      $(window).resize(function(){
          resize_group();
+         resize_width_responsive();
      });
 
      function resize_group(){
@@ -52,6 +62,17 @@ $(document).ready(function(){
             $input.css('width', (new Number($total_width) - new Number($label_width))+"px")
          });
      }
+
+     function resize_width_responsive(){
+      $('[css-width-responsive]').each(function(){
+         $(this).css('width', $(this).attr('css-width-responsive'));
+
+         $item = $(this).css('width').split('px')[0];
+         if(new Number($item) > window.screen.width){
+             $(this).css('width', (window.screen.width - 60)+"px");
+         }
+      });
+  }
 
 
      $(document).on('change', 'input[set-role=tbl-checkbox-header]', function(){
@@ -129,6 +150,36 @@ $(document).ready(function(){
             tArea.style.height = (5+tArea.scrollHeight)+"px";
          }
       }
+
+      $(document).on('focus', '.input-group-joined input', function(){
+         $(this).siblings('label').css('top', '5px');
+     });
+ 
+     $(document).on('blur', '.input-group-joined input', function(){
+         if($(this).val() == ""){
+             $(this).siblings('label').css('top', '21px');
+         }
+     });
+ 
+     $(document).on('focus', '.input-group-joined textarea', function(){
+         $(this).siblings('label').css('top', '5px');
+     });
+ 
+     $(document).on('blur', '.input-group-joined textarea', function(){
+         if($(this).val() == ""){
+             $(this).siblings('label').css('top', '21px');
+         }
+     });
+ 
+     $(document).on('focus', '.input-group-joined select', function(){
+         $(this).siblings('label').css('top', '5px');
+     });
+ 
+     $(document).on('blur', '.input-group-joined select', function(){
+         if($(this).val() == ""){
+             $(this).siblings('label').css('top', '21px');
+         }
+     });
 
       $('.richtext-area').richText({
          // text formatting
